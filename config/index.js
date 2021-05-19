@@ -9,9 +9,17 @@ const logger = require("morgan");
 // https://www.npmjs.com/package/cookie-parser
 const cookieParser = require("cookie-parser");
 
+const cors = require("cors");
+
 // Middleware configuration
 module.exports = (app) => {
   // In development environment the app logs
+  app.use(
+    cors({
+      origin: "http://localhost:3000",
+    })
+  );
+
   app.use(logger("dev"));
 
   // To have access to `body` property in the request
@@ -19,3 +27,6 @@ module.exports = (app) => {
   app.use(express.urlencoded({ extended: false }));
   app.use(cookieParser());
 };
+
+//1*** removed all other lines plus views folder and public folder.
+//2** CHANGED name:"." => name:"rotten-api" in package.json and server url in db/index.js

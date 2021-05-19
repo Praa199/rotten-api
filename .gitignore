@@ -6,3 +6,52 @@ npm-debug.log
 
 # Environment Variables should NEVER be published
 .env
+
+
+$ npm ironhack .
+
+removed:
+
+**** from app.js
+
+// Handles the handlebars
+// https://www.npmjs.com/package/hbs
+const hbs = require("hbs");
+
+
+// default value for title local
+//const projectName = ".";
+//const capitalized = (string) =>
+  //string[0].toUpperCase() + string.slice(1).toLowerCase();
+
+app.locals.title = `${capitalized(projectName)} created with Ironlauncher`;
+
+// require("./error-handling")(app);
+
+
+*** config/index.js
+
+//1*** removed all other lines plus views folder and public folder.
+
+***db/index.js
+
+//2** CHANGED name:"." => name:"rotten-api" 
+in package.json and server url
+
+//3*** created models.js
+
+//4*** created seed.js in /db. 
+       seeded movies.models
+       $ node db/seed.js
+
+
+//5*** displayed data from database through /routes/index.js,
+    created and linked routes/movies.js
+    added "api" in app.js app.use("/", index);
+//6***  $ npm install cors
+      config/index.js require cors to connect backend to frontend
+    app.use(
+    cors({
+      origin: "http://localhost:3000",
+    })
+  );
