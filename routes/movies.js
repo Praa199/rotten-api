@@ -16,3 +16,9 @@ router.get("/:allTheSingleMovies", (req, res) => {
 });
 
 module.exports = router;
+
+//  /routes/index.js:
+
+// const moviesRouter = require("./movies");
+
+// router.use("/movies", moviesRouter);
