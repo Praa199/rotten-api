@@ -6,6 +6,7 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/me", isLoggedIn, (req, res) => {
   // console.log(req.headers);
+  console.log(req.headers);
   res.json(true);
   // const accessToken = req.headers.authorization;
 
